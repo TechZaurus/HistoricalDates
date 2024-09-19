@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.title {
+    padding-left: 3vw;
+    border: solid;
+    border-top: none;
+    border-width: $title-border-width;
+    border-style: solid;
+    border-image-slice: 1;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-image-source:
+        linear-gradient(to bottom,
+            $accent-color-primary,
+            $accent-color-secondary );
+}

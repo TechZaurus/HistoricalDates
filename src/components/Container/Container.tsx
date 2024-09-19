@@ -9,17 +9,18 @@ import {
 interface Props extends PropsWithChildren {
   bordered?: boolean;
   style?: React.CSSProperties;
+  childrenStyle?: React.CSSProperties;
   children?: ReactNode;
   addCrosshair?: boolean;
 }
 
-const Container: React.FC<Props> = ({ bordered, addCrosshair, children, style }) => {
+const Container: React.FC<Props> = ({ bordered, addCrosshair, children, style, childrenStyle }) => {
   const classNameObject: any = {};
   classNameObject[borderedContainer] = bordered;
 
   return (
     <div style={style} className={classNames(classNameObject)}>
-      <div style={{ position: "absolute" }}>{children}</div>
+      <div style={childrenStyle}>{children}</div>
       {addCrosshair && <div className={container__HorizontalLine} />}
       {addCrosshair && <div className={container__VerticalLine} />}
     </div>

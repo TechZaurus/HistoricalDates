@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.titleText {
+    @include common-text();
+    font-size: 3vw;
+    font-weight: 700;
+    max-width: 200px;
+    line-height: 3.5vw;
+}
