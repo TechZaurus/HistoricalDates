@@ -1,9 +1,11 @@
-import "./Sample.css";
+import { teststyle } from "./Sample.module.scss";
 
 export default function Sample() {
   return (
-    <footer color="red">
-      <a href="#">Тестовый Footer для настройки Webpack+TS</a>
+    <footer>
+      <a className={teststyle} href="#">
+        Тестовый Footer для настройки Webpack+TS
+      </a>
     </footer>
   );
 }
