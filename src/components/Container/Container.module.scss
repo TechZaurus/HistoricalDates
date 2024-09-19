@@ -1,5 +1,24 @@
 @import '../../styles/mixins';
+@import '../../styles/variables';
 
 .borderedContainer {
     @include bordered-container();
+    height: 100%;
+}
+
+.container__HorizontalLine, .container__VerticalLine {
+    background-color: $primary-color;
+    position: relative;
+}
+
+.container__HorizontalLine {
+    width: 100%;
+    height: 0.06em;
+    top: 50%;
+}
+
+.container__VerticalLine {
+    width: 0.04em;
+    height: 100%;
+    left: 50%;
 }
