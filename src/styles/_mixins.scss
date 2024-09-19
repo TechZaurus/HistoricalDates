@@ -1,0 +1,7 @@
+@import 'variables';
+
+@mixin bordered-container() {
+    border-style: solid;
+    border-width: $border-width;
+    border-color: $primary-color;
+}
