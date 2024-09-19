@@ -12,10 +12,10 @@ const useGenerateCircleItems = (size: number) => {
     for (let i = 0; i < size; ++i) {
       let props: React.CSSProperties = { position: "absolute" };
       if (i === 0 && size % 2 === 0) {
-        props["transform"] = `translate(${CIRCLE_SIZE_IN_REM / 2}rem)`;
+        props["transform"] = `translate(0, ${CIRCLE_SIZE_IN_REM / 2}rem)`;
       } else {
         props["transform"] =
-          `rotate(${initialSegmentDeg}deg) translate(${CIRCLE_SIZE_IN_REM / 2}rem) rotate(-${initialSegmentDeg}deg)`;
+          `rotate(${initialSegmentDeg}deg) translate(0, ${CIRCLE_SIZE_IN_REM / 2}rem) rotate(-${initialSegmentDeg}deg)`;
         initialSegmentDeg += segmentDeg;
       }
       itemStyles.push({ id: String(i), props });

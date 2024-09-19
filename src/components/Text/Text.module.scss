@@ -8,3 +8,18 @@
     max-width: 200px;
     line-height: 3.5vw;
 }
+
+
+.primaryAccentText, .secondaryAccentText {
+    @include common-text();
+    font-size: 8.5rem;
+    font-weight: 700;
+}
+
+.primaryAccentText {
+    color: $secondary-color;
+}
+
+.secondaryAccentText {
+    color: $accent-color-secondary;
+}

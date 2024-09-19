@@ -14,7 +14,7 @@ export interface CircleItem {
 
 const CircleSelector: React.FC<Props> = ({ style }) => {
   
-  const generatedStyles = useGenerateCircleItems(5);  
+  const generatedStyles = useGenerateCircleItems(6);  
 
   return (
     <div style={style} className={circle}>

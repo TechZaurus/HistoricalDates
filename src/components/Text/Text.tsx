@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react"
-import {titleText} from "./Text.module.scss";
+import {titleText, primaryAccentText, secondaryAccentText} from "./Text.module.scss";
 import classNames from "classnames";
 
 export enum TextType {
@@ -19,6 +19,8 @@ interface Props extends PropsWithChildren {
 const Text : React.FC<Props> = ({children, style, type}) => {
     const classNameObject: any = {};
     classNameObject[titleText] = TextType.Title === type;  
+    classNameObject[primaryAccentText] = TextType.AccentPrimary === type;
+    classNameObject[secondaryAccentText] = TextType.AccentSecondary === type;
 
     return <div className={classNames(classNameObject)} style={style}>{children}</div>
 }

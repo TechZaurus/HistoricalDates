@@ -40,6 +40,20 @@ const HistoricalDates = () => {
             left: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem)`
           }}
         />
+        <Text type={TextType.AccentPrimary} style={{
+            position: "absolute",
+            top: `calc(50% - 6rem)`,
+            left: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem - 10rem)`
+        }}>
+            1995
+        </Text>
+        <Text type={TextType.AccentSecondary} style={{
+            position: "absolute",
+            top: `calc(50% - 6rem)`,
+            left: `calc(50% + ${CIRCLE_SIZE_IN_REM / 2}rem - 10rem)`
+        }}>
+            2000
+        </Text>
       </Container>
     </div>
   );
