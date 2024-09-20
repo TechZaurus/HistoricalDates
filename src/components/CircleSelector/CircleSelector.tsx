@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { circle, circle__Selector__Item, circle__Selector } from "./CircleSelector.module.scss";
-import { CIRCLE_SIZE_IN_REM } from "../../constants/constants";
+import { CIRCLE_SIZE_IN_VW } from "../../constants/constants";
 import useGenerateCircleItems from "./hooks/useGenerateCircleItems";
 
 interface Props extends PropsWithChildren {

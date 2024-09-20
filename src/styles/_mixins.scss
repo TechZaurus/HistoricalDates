@@ -3,7 +3,7 @@
 @mixin bordered-container() {
     border-style: solid;
     border-width: $border-width;
-    border-color: $primary-color;
+    border-color: $primary-color-transparent;
 }
 
 @mixin common-text($font-size, $font-weight) {

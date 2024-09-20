@@ -4,7 +4,7 @@ import Title from "../../components/Title/Title";
 import Text, { TextType } from "../../components/Text/Text";
 import CircleSelector from "../../components/CircleSelector/CircleSelector";
 import {
-  CIRCLE_SIZE_IN_REM,
+  CIRCLE_SIZE_IN_VW,
   LEFT_MARGIN_PERCENTAGE,
   RIGHT_MARGIN_PERCENTAGE,
   TITLE,
@@ -30,29 +30,29 @@ const HistoricalDates = () => {
           height: "100%",
         }}
       >
-        <Title style={{ position: "relative", top: `${TITLE_TOP_MARGIN_IN_REM}rem` }}>
+        <Title style={{ position: "relative", top: `${TITLE_TOP_MARGIN_IN_REM}vw` }}>
           <Text type={TextType.Title}>{TITLE}</Text>
         </Title>
         <CircleSelector
           style={{
             position: "absolute",
-            width: `${CIRCLE_SIZE_IN_REM}rem`,
-            height: `${CIRCLE_SIZE_IN_REM}rem`,
-            top: `calc(40% - ${CIRCLE_SIZE_IN_REM / 2}rem)`,
-            left: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem)`
+            width: `${CIRCLE_SIZE_IN_VW}vw`,
+            height: `${CIRCLE_SIZE_IN_VW}vw`,
+            top: `calc(40% - ${CIRCLE_SIZE_IN_VW / 2}vw)`,
+            left: `calc(50% - ${CIRCLE_SIZE_IN_VW / 2}vw)`
           }}
         />
         <Text type={TextType.AccentPrimary} style={{
             position: "absolute",
-            top: `calc(40% - 6rem)`,
-            left: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem - 10rem)`
+            top: `calc(40% - 5.5vw)`,
+            left: `calc(50% - ${CIRCLE_SIZE_IN_VW / 2}vw - 9.5vw)`
         }}>
             1995
         </Text>
         <Text type={TextType.AccentSecondary} style={{
             position: "absolute",
-            top: `calc(40% - 6rem)`,
-            left: `calc(50% + ${CIRCLE_SIZE_IN_REM / 2}rem - 10rem)`
+            top: `calc(40% - 5.5vw)`,
+            left: `calc(50% + ${CIRCLE_SIZE_IN_VW / 2}vw - 9.5vw)`
         }}>
             2000
         </Text>
