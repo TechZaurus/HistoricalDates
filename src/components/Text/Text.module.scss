@@ -1,19 +1,16 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+
 .titleText {
-    @include common-text();
-    font-size: 3vw;
-    font-weight: 700;
+    @include common-text(3vw, 700);
     max-width: 200px;
     line-height: 3.5vw;
 }
 
 
 .primaryAccentText, .secondaryAccentText {
-    @include common-text();
-    font-size: 8.5rem;
-    font-weight: 700;
+    @include common-text(8.5rem, 700);
 }
 
 .primaryAccentText {
@@ -22,4 +19,8 @@
 
 .secondaryAccentText {
     color: $accent-color-secondary;
+}
+
+.smallText {
+    @include common-text(1rem, 400);
 }

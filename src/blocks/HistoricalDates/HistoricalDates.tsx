@@ -10,6 +10,7 @@ import {
   TITLE,
   TITLE_TOP_MARGIN_IN_REM,
 } from "../../constants/constants";
+import Pager from "../../components/Pager/Pager";
 
 const HistoricalDates = () => {
   return (
@@ -54,6 +55,11 @@ const HistoricalDates = () => {
         }}>
             2000
         </Text>
+        <Pager style={{
+            position: "absolute",
+            top: "65%",
+            left: "calc(3vw + 6px)"
+        }}/>
       </Container>
     </div>
   );

@@ -1,0 +1,16 @@
+@import "../../styles/mixins";
+
+.circleButton {
+    @include bordered-container();
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: white;
+        cursor: pointer;
+    }
+}
