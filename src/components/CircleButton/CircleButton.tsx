@@ -14,14 +14,14 @@ export enum ButtonType {
 
 interface Props extends PropsWithChildren {
   children?: ReactNode;
-  type: ButtonType;
+  type?: ButtonType;
   style?: React.CSSProperties;
   onClick?: () => void;
 }
 
 const CircleButton: React.FC<Props> = ({ children, style, type, onClick }) => {
   const classNameObject: any = {};
-  classNameObject[circleButtonHover] = ButtonType.DEFAULT === type;
+  classNameObject[circleButtonHover] = ButtonType.DEFAULT === type || type === undefined;
   classNameObject[circleButtonDisabled] = ButtonType.DISABLED === type;
   classNameObject[circleButtonAccent] = ButtonType.ACCENT === type;
 

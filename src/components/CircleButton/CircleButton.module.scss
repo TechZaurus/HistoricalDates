@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: $background-color;
     border-color: $primary-color;
 }
 
@@ -34,7 +34,6 @@
     width: 2rem;
     height: 2rem;
     background-color: white;
-    //color: $accent-color-primary;
     filter: drop-shadow(0 0 3px $accent-color-primary);
     &:hover {
         cursor: pointer;

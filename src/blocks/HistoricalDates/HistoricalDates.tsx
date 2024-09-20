@@ -13,7 +13,9 @@ import {
 import Pager from "../../components/Pager/Pager";
 import SectionSwiper from "../../components/SectionSwiper/SectionSwiper";
 
+
 const HistoricalDates = () => {
+
   return (
     <div className={historicalDates}>
       <Container

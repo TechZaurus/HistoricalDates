@@ -1,5 +1,5 @@
 // Sizes
-export const CIRCLE_SIZE_IN_VW = 25;
+export const CIRCLE_SIZE_IN_VW = 25.2;
 
 // Spacings
 export const LEFT_MARGIN_PERCENTAGE = 15;
