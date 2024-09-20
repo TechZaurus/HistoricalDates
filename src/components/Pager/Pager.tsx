@@ -22,8 +22,8 @@ const Pager: React.FC<Props> = ({ style }) => {
         <CircleButton>
           <ChevronLeft style={{paddingLeft: "0.2rem"}} />
         </CircleButton>
-        <CircleButton>
-          <ChevronRight style={{paddingLeft: "0.5rem"}} />
+        <CircleButton disabled>
+          <ChevronRight style={{paddingLeft: "0.5rem"}}/>
         </CircleButton>
       </Row>
     </div>
