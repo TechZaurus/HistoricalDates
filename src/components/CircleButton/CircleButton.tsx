@@ -1,17 +1,40 @@
 import { PropsWithChildren, ReactNode } from "react";
-import { circleButtonHover, circleButtonDisabled } from "./CircleButton.module.scss";
+import {
+  circleButtonHover,
+  circleButtonDisabled,
+  circleButtonAccent,
+} from "./CircleButton.module.scss";
+import classNames from "classnames";
 
-interface Props extends PropsWithChildren {
-  children: ReactNode;
-  disabled?: boolean;
-  style?: React.CSSProperties;
+export enum ButtonType {
+  DEFAULT = "default",
+  DISABLED = "disabled",
+  ACCENT = "accent",
 }
 
-const CircleButton: React.FC<Props> = ({ children, style, disabled }) => {
+interface Props extends PropsWithChildren {
+  children?: ReactNode;
+  type: ButtonType;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+}
+
+const CircleButton: React.FC<Props> = ({ children, style, type, onClick }) => {
+  const classNameObject: any = {};
+  classNameObject[circleButtonHover] = ButtonType.DEFAULT === type;
+  classNameObject[circleButtonDisabled] = ButtonType.DISABLED === type;
+  classNameObject[circleButtonAccent] = ButtonType.ACCENT === type;
+
   return (
-    <div style={style} className={disabled ? circleButtonDisabled : circleButtonHover}>
+    <button
+      style={style}
+      className={classNames(classNameObject)}
+      onClick={() => {
+        if (onClick !== undefined) onClick();
+      }}
+    >
       {children}
-    </div>
+    </button>
   );
 };
 

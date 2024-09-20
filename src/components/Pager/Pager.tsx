@@ -1,4 +1,4 @@
-import CircleButton from "../CircleButton/CircleButton";
+import CircleButton, { ButtonType } from "../CircleButton/CircleButton";
 import Text, { TextType } from "../Text/Text";
 import Row from "../Row/Row";
 import ChevronLeft from "../../icons/ChevronLeft";
@@ -19,10 +19,10 @@ const Pager: React.FC<Props> = ({ style }) => {
           marginTop: "0.75rem",
         }}
       >
-        <CircleButton>
+        <CircleButton type={ButtonType.DEFAULT}>
           <ChevronLeft style={{paddingLeft: "0.2rem"}} />
         </CircleButton>
-        <CircleButton disabled>
+        <CircleButton type={ButtonType.DISABLED}>
           <ChevronRight style={{paddingLeft: "0.5rem"}}/>
         </CircleButton>
       </Row>

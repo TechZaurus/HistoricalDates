@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react"
-import {titleText, primaryAccentText, secondaryAccentText, smallText} from "./Text.module.scss";
+import {titleText, primaryAccentText, secondaryAccentText, smallText, subtitleText, defaultText} from "./Text.module.scss";
 import classNames from "classnames";
 
 export enum TextType {
@@ -13,7 +13,7 @@ export enum TextType {
 
 interface Props extends PropsWithChildren {
     style?: React.CSSProperties;
-    type: TextType;
+    type?: TextType;
     children: string;
 }
 
@@ -23,6 +23,8 @@ const Text : React.FC<Props> = ({children, style, type}) => {
     classNameObject[primaryAccentText] = TextType.AccentPrimary === type;
     classNameObject[secondaryAccentText] = TextType.AccentSecondary === type;
     classNameObject[smallText] = TextType.Small === type;
+    classNameObject[subtitleText] = TextType.Subtitle === type;
+    classNameObject[defaultText] = TextType.Default === type || type === undefined;
 
     return <div className={classNames(classNameObject)} style={style}>{children}</div>
 }

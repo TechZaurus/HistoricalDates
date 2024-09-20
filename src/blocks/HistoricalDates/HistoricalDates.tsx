@@ -11,6 +11,7 @@ import {
   TITLE_TOP_MARGIN_IN_REM,
 } from "../../constants/constants";
 import Pager from "../../components/Pager/Pager";
+import SectionSwiper from "../../components/SectionSwiper/SectionSwiper";
 
 const HistoricalDates = () => {
   return (
@@ -37,29 +38,45 @@ const HistoricalDates = () => {
             position: "absolute",
             width: `${CIRCLE_SIZE_IN_REM}rem`,
             height: `${CIRCLE_SIZE_IN_REM}rem`,
-            top: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem)`,
+            top: `calc(40% - ${CIRCLE_SIZE_IN_REM / 2}rem)`,
             left: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem)`
           }}
         />
         <Text type={TextType.AccentPrimary} style={{
             position: "absolute",
-            top: `calc(50% - 6rem)`,
+            top: `calc(40% - 6rem)`,
             left: `calc(50% - ${CIRCLE_SIZE_IN_REM / 2}rem - 10rem)`
         }}>
             1995
         </Text>
         <Text type={TextType.AccentSecondary} style={{
             position: "absolute",
-            top: `calc(50% - 6rem)`,
+            top: `calc(40% - 6rem)`,
             left: `calc(50% + ${CIRCLE_SIZE_IN_REM / 2}rem - 10rem)`
         }}>
             2000
         </Text>
         <Pager style={{
             position: "absolute",
-            top: "65%",
+            top: "55%",
             left: "calc(3vw + 6px)"
         }}/>
+        <SectionSwiper style={{
+            position: "absolute",
+            top: "73%",
+            width: "85%",
+            paddingLeft: "3.5vw",
+        }} buttonContainerStyle={{
+            display: "inline-flex",
+            top: "calc(50% - 1rem)",
+            width: "100%",
+            height: "auto",
+            position: "absolute",
+            zIndex: "2"
+        }}  buttonRightStyle={{
+            position: "absolute",
+            left: "95%"
+        }} />        
       </Container>
     </div>
   );

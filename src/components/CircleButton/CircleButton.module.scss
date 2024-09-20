@@ -1,6 +1,7 @@
 @import "../../styles/mixins";
+@import "../../styles/variables";
 
-.circleButton {
+%circleButton {
     @include bordered-container();
     border-radius: 50%;
     width: 3rem;
@@ -8,11 +9,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 }
 
 
 .circleButtonHover {
-    @extend .circleButton;
+    @extend %circleButton;
     &:hover {
         background-color: white;
         cursor: pointer;
@@ -21,6 +23,19 @@
 
 
 .circleButtonDisabled {
-    @extend .circleButton;
+    @extend %circleButton;
     opacity: 50%;
+}
+
+
+.circleButtonAccent {
+    @extend %circleButton;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    //color: $accent-color-primary;
+    filter: drop-shadow(0 0 3px $accent-color-primary);
+    &:hover {
+        cursor: pointer;
+    }
 }

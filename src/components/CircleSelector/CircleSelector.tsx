@@ -20,7 +20,7 @@ const CircleSelector: React.FC<Props> = ({ style }) => {
     <div style={style} className={circle}>
       <div className={circle__Selector}>
         {generatedStyles.map((item: CircleItem) => (
-          <div id={item.id} style={item.props} className={circle__Selector__Item} />
+          <div key={item.id} style={item.props} className={circle__Selector__Item} />
         ))}
       </div>
     </div>

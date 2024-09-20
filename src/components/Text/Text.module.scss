@@ -1,6 +1,10 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
+.defaultText {
+    @include common-text(1rem, 400);
+    line-height: 1.6rem;
+}
 
 .titleText {
     @include common-text(3vw, 700);
@@ -8,6 +12,11 @@
     line-height: 3.5vw;
 }
 
+.subtitleText {
+    @include common-text(1.4rem, 400);
+    color: $accent-color-primary;
+    font-family: "Bebas Neue", sans-serif;
+}
 
 .primaryAccentText, .secondaryAccentText {
     @include common-text(8.5rem, 700);
@@ -24,3 +33,4 @@
 .smallText {
     @include common-text(1rem, 400);
 }
+
