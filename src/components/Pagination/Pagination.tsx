@@ -1,16 +1,39 @@
+import { useSelector } from "react-redux";
 import { paginationDot, paginationContainer } from "./Pagination.module.scss";
+import { IRootState, useAppDispatch } from "../../store/store";
+import { setCurrentCategory } from "../../features/dataSlice";
+import { setPagerData } from "../../features/pagerControlSlice";
+import { setCounterData } from "../../features/counterControlSlice";
 
 interface Props {
-  size: number;
-  activeIndex: number;
   style?: React.CSSProperties;
 }
 
-const Pagination: React.FC<Props> = ({ size, activeIndex, style }) => {
+const Pagination: React.FC<Props> = ({ style }) => {
+  const categories = useSelector((state: IRootState) => state.historicalDates.data.categories);
+  const activeIndex = useSelector((state: IRootState) => state.historicalDates.currentCategory?.id); 
+
+  const dispatch = useAppDispatch();
+
   return (
     <div className={paginationContainer} style={style}>
-      {[...Array(size)].map((item, index) => (
-        <div key={index} className={paginationDot} style={{ opacity: activeIndex === index ? 1 : 0.4 }} />
+      {categories.map((item, index) => (
+        <div key={index} className={paginationDot} style={{ opacity: activeIndex === index ? 1 : 0.4 }} onClick={() => {
+            const category = categories[index];
+            dispatch(setCurrentCategory(categories[index]));
+            dispatch(
+                setPagerData({
+                  currentPage: index + 1,
+                  totalPages: categories.length,
+                }),
+              );
+              dispatch(
+                setCounterData({
+                  toTextLeft: String(category.minYear),
+                  toTextRight: String(category.maxYear),
+                }),
+              );
+        }} />
       ))}
     </div>
   );
