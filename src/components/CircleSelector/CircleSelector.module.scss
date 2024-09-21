@@ -1,0 +1,21 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.circle {
+    @include bordered-container();
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.circle__Selector__Item {
+    @include dot();
+}
+
+.circle__Selector {
+    position: absolute;
+    left: calc(12.6vw - 3px);
+    top: calc(12.6vw - 3px);
+}
+

@@ -1,0 +1,19 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.borderedContainer {
+    @include bordered-container();
+    height: 100%;
+}
+
+.container__HorizontalLine, .container__VerticalLine {
+    position: relative;
+}
+
+.container__HorizontalLine {
+    @include horizontal-line(40%);
+}
+
+.container__VerticalLine {
+    @include vertical-line(50%);
+}

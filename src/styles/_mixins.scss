@@ -1,0 +1,36 @@
+@import 'variables';
+
+@mixin bordered-container() {
+    border-style: solid;
+    border-width: $border-width;
+    border-color: $primary-color-transparent;
+}
+
+@mixin common-text($font-size, $font-weight) {
+    font-family: 'PT Sans', system-ui;
+    font-style: normal;
+    color: $primary-color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin horizontal-line($position) {
+    background-color: $primary-color-transparent;
+    width: 100%;
+    height: 1px;
+    top: $position;
+}
+
+@mixin vertical-line($position) {
+    background-color: $primary-color-transparent;
+    width: 1px;
+    height: 100%;
+    left: $position;
+}
+
+@mixin dot() {
+    width: 6px;
+    height: 6px;
+    background-color: $primary-color;
+    border-radius: 50%;
+}

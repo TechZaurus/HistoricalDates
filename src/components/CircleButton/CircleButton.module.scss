@@ -1,0 +1,41 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+%circleButton {
+    @include bordered-container();
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-color;
+    border-color: $primary-color;
+}
+
+
+.circleButtonHover {
+    @extend %circleButton;
+    &:hover {
+        background-color: white;
+        cursor: pointer;
+    }
+}
+
+
+.circleButtonDisabled {
+    @extend %circleButton;
+    opacity: 50%;
+}
+
+
+.circleButtonAccent {
+    @extend %circleButton;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    filter: drop-shadow(0 0 3px $accent-color-primary);
+    &:hover {
+        cursor: pointer;
+    }
+}

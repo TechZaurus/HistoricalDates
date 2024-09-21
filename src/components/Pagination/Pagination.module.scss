@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+
+.paginationDot {
+    @include dot();
+    margin-right: 6px;
+}
+
+.paginationContainer {
+    display: inline-flex;
+}

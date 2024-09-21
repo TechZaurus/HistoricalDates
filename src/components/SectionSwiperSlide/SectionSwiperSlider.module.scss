@@ -1,0 +1,11 @@
+
+
+.sliderContainer {
+    max-height: 9rem;
+    opacity: 1;
+}
+
+.sliderContainer__Transparent {
+    @extend .sliderContainer;
+    opacity: 0.5;
+}
