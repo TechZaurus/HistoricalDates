@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { CIRCLE_SIZE_IN_VW } from "../../constants/constants";
 import CircleButton from "../CircleButton/CircleButton";
-import { circleButtonHover } from "../CircleButton/CircleButton.module.scss";
+import Text from "../Text/Text";
 
 interface Props extends PropsWithChildren {
   style?: React.CSSProperties;
@@ -44,6 +44,7 @@ const CircleSelector: React.FC<Props> = ({ style }) => {
 
   const { contextSafe } = useGSAP();
   const timeline = gsap.timeline();
+  const categoryTimeline = gsap.timeline();
 
   const shuffleItems = (newIndex: number) => {
     const itemsAfter = circleItems.slice(newIndex);
@@ -56,6 +57,8 @@ const CircleSelector: React.FC<Props> = ({ style }) => {
   };
 
   const onClickItem = contextSafe((item: CircleItem) => {
+    categoryTimeline.to(`.category`, {duration: 0.6, opacity: 0});
+    categoryTimeline.to(`.category`, {duration: 0.6, opacity: 1});
     timeline.to(`.circleSectionText`, { duration: 0.01, rotation: `+=${segmentDeg * item.id}` });
     timeline.to(`.${circle}`, { rotation: `-=${segmentDeg * item.id}` });
     if (item.id !== 0) {
@@ -64,35 +67,43 @@ const CircleSelector: React.FC<Props> = ({ style }) => {
   });
 
   return (
-    <div style={style} className={circle} ref={containerRef}>
-      <div className={circle__Selector} ref={selectorRef}>
-        {circleItems.map((item: CircleItem, index) => (
-          <div key={item.id} id={String(item.id)}>
-            <div style={item.props} className={circle__Selector__Item} />
-            <div
-              className={"hoverButton" + item.id}
-              style={{
-                transform: "translate(calc(-1.4rem), calc(-1.4rem))",
-                opacity: `${index === 0 ? "100" : "0"}`,
-              }}
-              onMouseEnter={() => {
-                if (index !== 0) {
-                  timeline.to(`.hoverButton${item.id}`, { duration: 0.3, opacity: 1 });
-                }
-              }}
-              onMouseLeave={() => {
-                if (index !== 0) {
-                  timeline.to(`.hoverButton${item.id}`, { duration: 0.3, opacity: 0 });
-                }
-              }}
-              onClick={() => onClickItem(item)}
-            >
-              <CircleButton style={{ ...item.props }}>{item.children}</CircleButton>
+    <>
+      <div style={style} className={circle} ref={containerRef}>
+        <div className={circle__Selector} ref={selectorRef}>
+          {circleItems.map((item: CircleItem, index) => (
+            <div key={item.id} id={String(item.id)}>
+              <div style={item.props} className={circle__Selector__Item} />
+              <div
+                className={"hoverButton" + item.id}
+                style={{
+                  transform: "translate(calc(-1.4rem), calc(-1.4rem))",
+                  opacity: `${index === 0 ? "100" : "0"}`,
+                }}
+                onMouseEnter={() => {
+                  if (index !== 0) {
+                    timeline.to(`.hoverButton${item.id}`, { duration: 0.3, opacity: 1 });
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (index !== 0) {
+                    timeline.to(`.hoverButton${item.id}`, { duration: 0.3, opacity: 0 });
+                  }
+                }}
+                onClick={() => onClickItem(item)}
+              >
+                <CircleButton style={{ ...item.props }}>{item.children}</CircleButton>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+      <div
+        className="category"
+        style={{ position: "absolute", left: "calc(50% + 9vw)", top: "calc(40% - 11.8vw)", fontWeight: "700", opacity: "1" }}
+      >
+        <Text style={{ fontWeight: "700", fontSize: "1.2vw" }}>Категория</Text>
+      </div>
+    </>
   );
 };
 

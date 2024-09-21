@@ -22,6 +22,18 @@
     @include common-text(8.4vw, 700);
 }
 
+@media screen and (min-width: 767px) and (max-width: 1020px) {
+    .primaryAccentText, .secondaryAccentText {
+        @include common-text(7rem, 700);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .primaryAccentText, .secondaryAccentText {
+        @include common-text(4rem, 700);
+    }
+}
+
 .primaryAccentText {
     color: $secondary-color;
 }

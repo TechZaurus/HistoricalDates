@@ -10,10 +10,7 @@
 }
 
 .circle__Selector__Item {
-    width: 6px;
-    height: 6px;
-    background-color: $primary-color;
-    border-radius: 50%;
+    @include dot();
 }
 
 .circle__Selector {

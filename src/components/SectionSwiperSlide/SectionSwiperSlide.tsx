@@ -1,13 +1,14 @@
 import Text, { TextType } from "../Text/Text";
-import { sliderContainer } from "./SectionSwiperSlider.module.scss";
+import { sliderContainer, sliderContainer__Transparent } from "./SectionSwiperSlider.module.scss";
 
 interface Props {
   style?: React.CSSProperties;
+  disabled?: boolean;
 }
 
-const SectionSwiperSlide: React.FC<Props> = ({ style }) => {
+const SectionSwiperSlide: React.FC<Props> = ({ style, disabled }) => {
   return (
-    <div style={style} className={sliderContainer}>
+    <div style={style} className={disabled? sliderContainer__Transparent : sliderContainer}>
       <Text type={TextType.Subtitle}>2000</Text>
       <br />
       <Text>

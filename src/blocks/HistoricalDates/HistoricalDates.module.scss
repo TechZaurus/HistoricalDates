@@ -1,7 +1,14 @@
-@import '../../styles/_variables.scss';
+@import "../../styles/mixins";
+@import '../../styles/variables';
 
 .historicalDates {
     background-color: $background-color;
     width: 100%;
     height: 100%;
+}
+
+.mobileDelimiter {
+    @include horizontal-line(43%);
+    position: relative;
+    width: 110%;
 }
