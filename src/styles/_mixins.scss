@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 @mixin bordered-container() {
     border-style: solid;
