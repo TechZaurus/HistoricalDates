@@ -7,7 +7,7 @@ export const RIGHT_MARGIN_PERCENTAGE = 10;
 export const TITLE_TOP_MARGIN_IN_REM = 5;
 
 // Texts
-export const TITLE = "Исторические даты";
+export const TITLE = "Historical Dates";
 
 // Swiper
 export const SWIPER_SPEED_IN_MS = 1000;

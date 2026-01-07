@@ -86,7 +86,7 @@ const HistoricalDates = () => {
             selectorSize={data.categories.length}
             titles={
               data.categories.length === 0
-                ? [{ id: 0, name: "Ошибка" }]
+                ? [{ id: 0, name: "Error" }]
                 : data.categories.map((category: Category) => {
                     return { id: category.id, name: category.name };
                   })

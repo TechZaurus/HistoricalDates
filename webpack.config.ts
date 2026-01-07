@@ -38,7 +38,7 @@ const config: Configuration = {
     path: path.resolve(__dirname, "dist"),
   },
   plugins: [
-    // Использован для простоты (HtmlWebpackPlugin можно использовать, если проект покрупней)
+    // Used for simplicity (HtmlWebpackPlugin can be used for larger projects)
     new CopyWebpackPlugin({
       patterns: [{ from: "public" }],
     }),
