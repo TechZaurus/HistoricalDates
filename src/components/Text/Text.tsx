@@ -34,11 +34,11 @@ const Text: React.FC<Props> = ({ children, style, type }) => {
 
   useEffect(() => {
     if (TextType.AccentPrimary === type || TextType.AccentSecondary === type) {
-        updateTextCounter();
+      updateTextCounter();
     }
   }, [data.toTextLeft, data.toTextRight]);
 
-  const classNameObject: any = {};
+  const classNameObject: Record<string, boolean> = {};
   classNameObject[titleText] = TextType.Title === type;
   classNameObject[primaryAccentText] = TextType.AccentPrimary === type;
   classNameObject[secondaryAccentText] = TextType.AccentSecondary === type;
@@ -47,10 +47,8 @@ const Text: React.FC<Props> = ({ children, style, type }) => {
   classNameObject[defaultText] = TextType.Default === type || type === undefined;
 
   const animateTimeline = (style: string, yearToChange: number) => {
-    let timeline = gsap.timeline();
+    const timeline = gsap.timeline();
     const currentYear = Number(children);
-    console.log("Current Year " + style, currentYear);
-    console.log("Change Year " + style, yearToChange);
     if (yearToChange <= currentYear) {
       for (let i = currentYear; i >= yearToChange; --i) {
         timeline.to(`.${style}`, {
@@ -61,14 +59,14 @@ const Text: React.FC<Props> = ({ children, style, type }) => {
       }
     } else {
       for (let i = currentYear; i <= yearToChange; ++i) {
-          timeline.to(`.${style}`, {
-            duration: 0.075,
-            text: { value: String(i) },
-            ease: "bounce.inOut",
-          });
-        }
+        timeline.to(`.${style}`, {
+          duration: 0.075,
+          text: { value: String(i) },
+          ease: "bounce.inOut",
+        });
+      }
     }
-  }
+  };
 
   const updateTextCounter = contextSafe(() => {
     animateTimeline(primaryAccentText, Number(data.toTextLeft));

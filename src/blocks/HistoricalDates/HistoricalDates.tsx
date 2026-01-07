@@ -26,15 +26,17 @@ const HistoricalDates = () => {
   const isMobile = useMediaQuery("only screen and (max-width : 1020px)");
   //const currentCategory = useSelector((state: IRootState) => state.historicalDates.currentCategory);
 
-  console.log("Data loaded: ", data);
-
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    console.log("Main Use Effect")
     dispatch(setCurrentCategory(data.categories[0]));
-    dispatch(setPagerData({currentPage: 1, totalPages: data.categories.length}));
-    dispatch(setCounterData({toTextLeft: String(data.categories[0].minYear), toTextRight: String(data.categories[0].maxYear)}));
+    dispatch(setPagerData({ currentPage: 1, totalPages: data.categories.length }));
+    dispatch(
+      setCounterData({
+        toTextLeft: String(data.categories[0].minYear),
+        toTextRight: String(data.categories[0].maxYear),
+      }),
+    );
   }, [data]);
 
   return (

@@ -20,7 +20,7 @@ interface Props extends PropsWithChildren {
 }
 
 const CircleButton: React.FC<Props> = ({ children, style, type, onClick }) => {
-  const classNameObject: any = {};
+  const classNameObject: Record<string, boolean> = {};
   classNameObject[circleButtonHover] = ButtonType.DEFAULT === type || type === undefined;
   classNameObject[circleButtonDisabled] = ButtonType.DISABLED === type;
   classNameObject[circleButtonAccent] = ButtonType.ACCENT === type;

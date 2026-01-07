@@ -15,7 +15,7 @@ interface Props extends PropsWithChildren {
 }
 
 const Container: React.FC<Props> = ({ bordered, addCrosshair, children, style, childrenStyle }) => {
-  const classNameObject: any = {};
+  const classNameObject: Record<string, boolean | undefined> = {};
   classNameObject[borderedContainer] = bordered;
 
   return (
