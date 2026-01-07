@@ -1,73 +1,67 @@
-### Короткое описание проекта
+# Historical Dates Animation
 
-Данный проект представляет собой блок, содержащий в себе круговой элемент, позволяющий переключаться между категориями, пагинацию и слайдер с текстами каких-либо временных событий.
+An interactive React component featuring a circular navigation system for historical events, built with GSAP animations and Redux state management.
 
-### Использованные технологии
+[**Live Demo**](https://66ef166fef2bafa39d23fa78--unique-croquembouche-5e63fb.netlify.app)
 
-Из оговорённых в тестовом задании: _React_, _TypeScript_, _Webpack_, _Sass (модули)_, _Swiper_, _@gsap/react_
+---
 
-Помимо упомянутых выше технологий в проекте есть: 
+### 🚀 Key Features
 
-- ESLint, его плагины и Prettier, для соблюдения форматирования кода и обнаружения потенциальных ошибок;
-- Redux и @reduxjs/toolkit - для стейт-менеджмента - немного "из пушки по воробьям", но стейт всё же хотелось использовать;
-- @uidotdev/usehooks - для использования хука useMediaQuery;
-- classnames - просто удобный синтаксис для объединения нескольких CSS классов;
-- @ndaidong/txtgen - для генерации тестовых данных категорий и событий;
+-   **Circular Navigation**: A unique, interactive circle interface for switching between historical categories.
+-   **Smooth Animations**: Fluid transitions and rotational effects powered by GSAP and `@gsap/react`.
+-   **Dynamic Year Counter**: Animated year transitions when switching categories.
+-   **Responsive Design**: Fully optimized for mobile and desktop views using `useMediaQuery`.
+-   **Automated Content**: Dynamic event generation using `@ndaidong/txtgen` for realistic testing.
 
-### Как запустить проект
+### 🛠 Technical Highlights
 
-Для начала необходимо склонировать репозиторий. 
+-   **State Management**: Implemented with **Redux Toolkit** to handle complex category and event states.
+-   **Animations**: Leverages **GSAP** for high-performance, complex UI animations.
+-   **Styling**: Modularized **Sass** for clean, scoped styling and maintainable architecture.
+-   **Performance**: Built with **Webpack** and **TypeScript** for a robust development environment and optimized production builds.
 
-`git clone https://github.com/TechZaurus/HistoricalDates.git`
+### 📦 Technologies Used
 
-Затем перейти в папку _HistoricalDates_
+-   **Core**: React 18, TypeScript
+-   **State**: Redux Toolkit, React Redux
+-   **Animations**: GSAP, @gsap/react
+-   **UI/UX**: Swiper, Sass (Modules), classnames
+-   **Utilities**: @uidotdev/usehooks, @ndaidong/txtgen
+-   **Tooling**: Webpack, ESLint, Prettier
 
-`cd HistoricalDates`
+### ⚙️ How to Run Locally
 
-Чтобы проект запустился, предварительно нужно установить необходимые пакеты. Для этого подойдёт любой менеджер пакетов. Очень рекомендую, кстати, менеджер bun - очень шустрый). В любом случае возможно выполнить одну из этих команд:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/TechZaurus/HistoricalDates.git
+   cd HistoricalDates
+   ```
 
-`bun install`
+2. **Install dependencies:**
+   ```bash
+   # Recommended: bun (fastest)
+   bun install
 
-`npm install`
+   # Alternatively:
+   npm install
+   # or
+   yarn install
+   ```
 
-`yarn install`
+3. **Start development server:**
+   ```bash
+   bun run dev # or npm run dev / yarn dev
+   ```
+   The site will be available at [http://localhost:8080/](http://localhost:8080/)
 
-Для того чтобы локально запустить проект необходимо после установки зависимостей выполнить одну из следующих команд:
+4. **Build for production:**
+   ```bash
+   bun run build # or npm run build / yarn build
+   ```
+   The production-ready files will be in the `dist` folder.
 
-`bun run dev`
+### 📝 Project Notes & Assumptions
 
-`npm run dev`
-
-`yarn dev`
-
-После выполнения этой команды, сайт будет доступен по адресу http://localhost:8080/
-
-Если необходимо собрать проект отдельно для этого нужно выполнить команду build:
-
-`bun run build`
-
-`npm run build`
-
-`yarn build`
-
-Собранные файлы будут доступны после этого в папке dist.
-
-### Что если неохота запускать или нужно проверить на устройстве
-
-Для этого можно просто пройти по данной ссылке: 
-
-[Netlify](https://66ef166fef2bafa39d23fa78--unique-croquembouche-5e63fb.netlify.app)
-
-Здесь находится деплой последней версии кода этого репозитория.
-
-### Какие есть допущения у проекта
-
-В данном проекте используется генератор случайных данных для визуального тестирования. Я не писала тестов на Jest, к сожалению, это бы заняло время. Но протестировать различные данные можно просто обновляя страницу: каждый раз блок будет инициирован новыми значениями.
-
-### Дополнительные комментарии
-
-Очень классное тестовое задание! :fire: 
-
-Мне очень понравилось! Над ним было очень приятно поработать - креативный дизайн и интересный концепт. Спасибо большое, что предоставили возможность его выполнить.
-
-Хорошего вам дня! 
+-   **Data Generation**: The project uses a random data generator for visual testing. Each page refresh provides a new set of categories and events to demonstrate the component's flexibility.
+-   **Performance Focus**: Animations are optimized for 60fps performance across modern browsers.

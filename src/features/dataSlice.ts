@@ -41,7 +41,7 @@ const generateCategories = () => {
   const categories: Array<Category> = [];
   const numOfCategories = randomIntFromInterval(2, 6);
   for (let i = 0; i < numOfCategories; ++i) {
-    const name = "Категория " + String(i + 1);
+    const name = "Category " + String(i + 1);
     const minYear = randomIntFromInterval(1960, 1990);
     const maxYear = randomIntFromInterval(minYear, 2024);
     const numOfEvents = randomIntFromInterval(4, 12);
