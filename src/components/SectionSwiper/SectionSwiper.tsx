@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 // Import Swiper styles
 import "swiper/scss";
@@ -33,8 +33,6 @@ const SectionSwiper: React.FC<Props> = ({
   const swiperRef = useRef<SwiperType | null>(null);
   const data = useSelector((state: IRootState) => state.swiperControl.data);
   const category = useSelector((state: IRootState) => state.historicalDates.currentCategory);
-
-  console.log("Swiper events: ", category?.events);
 
   const dispatch = useAppDispatch();
 

@@ -10,12 +10,10 @@ interface Props {
 
 const SectionSwiperSlide: React.FC<Props> = ({ style, disabled, title, body }) => {
   return (
-    <div style={style} className={disabled? sliderContainer__Transparent : sliderContainer}>
+    <div style={style} className={disabled ? sliderContainer__Transparent : sliderContainer}>
       <Text type={TextType.Subtitle}>{title}</Text>
       <br />
-      <Text>
-        {body}
-      </Text>
+      <Text>{body}</Text>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { paragraph, sentence } from "@ndaidong/txtgen";
+import { paragraph } from "@ndaidong/txtgen";
 
 export interface Data {
   categories: Array<Category>;
@@ -38,7 +38,7 @@ const eventCompare = (eventA: Event, eventB: Event) => {
 };
 
 const generateCategories = () => {
-  let categories: Array<Category> = [];
+  const categories: Array<Category> = [];
   const numOfCategories = randomIntFromInterval(2, 6);
   for (let i = 0; i < numOfCategories; ++i) {
     const name = "Категория " + String(i + 1);
@@ -78,12 +78,11 @@ export const dataSlice = createSlice({
       state.data.categories = [...action.payload.categories];
     },
     setCurrentCategory(state, action: PayloadAction<Category>) {
-      state.currentCategory = action.payload;  
+      state.currentCategory = action.payload;
     },
   },
 });
 
 export const { setCurrentCategory } = dataSlice.actions;
-
 
 export default dataSlice.reducer;
