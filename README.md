@@ -2,7 +2,7 @@
 
 An interactive React component featuring a circular navigation system for historical events, built with GSAP animations and Redux state management.
 
-[**Live Demo**](https://66ef166fef2bafa39d23fa78--unique-croquembouche-5e63fb.netlify.app)
+[**Live Demo**](https://unique-croquembouche-5e63fb.netlify.app)
 
 ---
 
